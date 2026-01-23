@@ -1,6 +1,6 @@
 import tkinter as tk
 
-from controller.view_controller import ViewController
+from controller.view_manger import ViewManager
 
 
 class Nodes(tk.Tk):
@@ -12,7 +12,7 @@ class Nodes(tk.Tk):
 
         self.bind("<Escape>", lambda e: self.quit())
 
-        self.view_controller = ViewController(self)
+        self.view_manager = ViewManager(self)
         
         self.deiconify()
 
