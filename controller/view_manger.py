@@ -10,6 +10,8 @@ class ViewManager:
     def __init__(self, root):
         self.root = root
 
+        self.start()
+
     
 
     # def create_ui(self):
@@ -18,10 +20,12 @@ class ViewManager:
 
     # def start():
 
-    def start():
+    def start(self):
         main_menu_model = MainMenuModel()
-        main_menu_coontroller = MainMenuController()
-        main_menu_view = MainMenuView()
+        main_menu_coontroller = MainMenuController(self, MainMenuModel)
+        main_menu_view = MainMenuView(self.root, MainMenuController)
+
+        main_menu_view.pack(fill="both")
 
 
         
