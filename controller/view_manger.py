@@ -10,7 +10,7 @@ class ViewManager:
     def __init__(self, root):
         self.root = root
 
-        self.start()
+        self.initialize_menu()
 
     
 
@@ -20,12 +20,18 @@ class ViewManager:
 
     # def start():
 
-    def start(self):
-        main_menu_model = MainMenuModel()
-        main_menu_coontroller = MainMenuController(self, MainMenuModel)
-        main_menu_view = MainMenuView(self.root, MainMenuController)
+    def initialize_menu(self):
+        model = MainMenuModel()
+        controller = MainMenuController(self, model)
+        view = MainMenuView(self.root, controller)
 
-        main_menu_view.pack(fill="both")
+        view.pack(fill="both")
 
 
+    def initialize_game(self):
+        model = MainMenuModel()
+        controller = MainMenuController(self, model)
+        view = MainMenuView(self.root, controller)
+
+        view.pack(fill="both")
         
