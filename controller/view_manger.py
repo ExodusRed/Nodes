@@ -2,9 +2,14 @@
 
 # import view.main_menu_view
 
-from view.main_menu_view import MainMenuView
-from controller.main_menu_controller import MainMenuController
-from model.main_menu_model import MainMenuModel
+from model.main_model import MainModel
+from view.main_view import MainView
+from controller.main_controller import MainController
+
+from model.settings_model import SettingsModel
+from view.settings_view import SettingsView
+from controller.settings_controller import SettingController
+
 
 class ViewManager:
     def __init__(self, root):
@@ -21,17 +26,17 @@ class ViewManager:
     # def start():
 
     def initialize_menu(self):
-        model = MainMenuModel()
-        controller = MainMenuController(self, model)
-        view = MainMenuView(self.root, controller)
+        model = MainModel()
+        controller = MainController(self, model)
+        view = MainView(self.root, controller)
 
         view.pack(fill="both")
 
 
-    def initialize_game(self):
-        model = MainMenuModel()
-        controller = MainMenuController(self, model)
-        view = MainMenuView(self.root, controller)
+    def initialize_settings(self):
+        model = SettingsModel()
+        controller = SettingsController(self, model)
+        view = SettingsView(self.root, controller)
 
         view.pack(fill="both")
         

@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class MainMenuView(tk.Frame):
+class MainView(tk.Frame):
     def __init__(self, master, controller):
         super().__init__(master)
         self.root = master
@@ -27,7 +27,7 @@ class MainMenuView(tk.Frame):
 
         add_node_button.pack(pady=10)
 
-        self.canvas = tk.Canvas(main_frame, bg="black")
+        self.canvas = tk.Canvas(main_frame, bg="black", width=600, height=800)
 
         self.canvas.pack(fill="both")
 

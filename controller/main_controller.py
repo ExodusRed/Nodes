@@ -1,6 +1,6 @@
 from controller.base_controller import BaseController
 
-class MainMenuController(BaseController):
+class MainController(BaseController):
     def __init__(self, view_manager, model):
         # self.view_manager = view_manager
         # self.model = model
