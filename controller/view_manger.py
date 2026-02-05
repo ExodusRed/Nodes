@@ -8,7 +8,7 @@ from controller.main_controller import MainController
 
 from model.settings_model import SettingsModel
 from view.settings_view import SettingsView
-from controller.settings_controller import SettingController
+from controller.settings_controller import SettingsController
 
 
 class ViewManager:
