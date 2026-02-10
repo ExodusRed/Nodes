@@ -1,6 +1,6 @@
-import base_controller
+from controller.base_controller import BaseController
 
-class SettingsController(base_controller.BaseController):
+class SettingsController(BaseController):
     def __init__(self, view_manager, model):
         super().__init__(view_manager, model)
 

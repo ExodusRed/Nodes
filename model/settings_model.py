@@ -1,5 +1,5 @@
 # no base model needed really
 
-class GameScreenModel():
+class SettingsModel():
     def __init__(self):
         pass
