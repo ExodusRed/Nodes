@@ -7,12 +7,14 @@ class Nodes(tk.Tk):
     def __init__(self):
         super().__init__()
         self.withdraw()
-        self.geometry("800x600")
-        self.center_window()
+        # self.geometry("800x600")
+        # self.center_window()
 
         self.bind("<Escape>", lambda e: self.quit())
 
         self.view_manager = ViewManager(self)
+
+        self.center_window()
         
         self.deiconify()
 

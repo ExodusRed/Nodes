@@ -17,19 +17,31 @@ class MainView(tk.Frame):
         
 
         main_frame = tk.Frame(self.root, bg="black", border=0)
-        main_frame.pack(fill="both") # , anchor="center"
-
         toolbar = tk.Frame(main_frame, bg="grey12")
-        toolbar.pack(fill="x")
-
+        
         # Toolbar buttons
-        add_node_button = tk.Button(toolbar, text="Add Node", command=lambda mode="add_node": self.controller.set_mode(mode))
+        add_node_button = tk.Button(
+            toolbar,
+            text="Add Node",
+            command=lambda mode="add_node": self.controller.set_mode(mode)
+        )
 
+        
+
+        self.canvas = tk.Canvas(main_frame, bg="black", width=800, height=600)
+
+        self.coords_label = tk.Label(main_frame, text="(0, 0)")
+
+
+
+        # Packing on screen
+
+        main_frame.pack(fill="both") # , anchor="center"
+        toolbar.pack(fill="x")
         add_node_button.pack(pady=10)
-
-        self.canvas = tk.Canvas(main_frame, bg="black", width=600, height=800)
-
         self.canvas.pack(fill="both")
+
+        self.coords_label.pack(fill="both")
 
 
 
@@ -39,5 +51,7 @@ class MainView(tk.Frame):
 
     def set_mode(self, mode):
         self.controller.set_mode(mode)
+
+    
 
 
