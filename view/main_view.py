@@ -23,7 +23,7 @@ class MainView(tk.Frame):
         toolbar.pack(fill="x")
 
         # Toolbar buttons
-        add_node_button = tk.Button(toolbar, text="Add Node")
+        add_node_button = tk.Button(toolbar, text="Add Node", command=lambda mode="add_node": self.controller.set_mode(mode))
 
         add_node_button.pack(pady=10)
 
@@ -36,5 +36,8 @@ class MainView(tk.Frame):
 
 
         # start
+
+    def set_mode(self, mode):
+        self.controller.set_mode(mode)
 
 
