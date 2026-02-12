@@ -72,6 +72,9 @@ class MainView(tk.Frame):
     def motion(self, event):
         pass
 
+    def add_node(self):
+        pass
+
     
 
 
