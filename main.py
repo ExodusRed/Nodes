@@ -6,17 +6,21 @@ from controller.view_manger import ViewManager
 class Nodes(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.withdraw()
-        # self.geometry("800x600")
+        # self.withdraw()
+        self.geometry("800x600")
         # self.center_window()
+
+        # self.deiconify()
+
+        self.update()
 
         self.bind("<Escape>", lambda e: self.quit())
 
         self.view_manager = ViewManager(self)
 
-        self.center_window()
+        # self.center_window()
         
-        self.deiconify()
+        # self.deiconify()
 
     def center_window(self):
         self.update_idletasks()

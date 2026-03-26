@@ -1,6 +1,7 @@
 import tkinter as tk
 
-from view.diagram import Diagram
+# from view.diagram import Diagram
+from view.component.diagram_view import DiagramView
 
 class MainView(tk.Frame):
     def __init__(self, master, controller):
@@ -34,12 +35,14 @@ class MainView(tk.Frame):
 
         # self.canvas = tk.Canvas(main_frame, bg="black", width=800, height=600)
 
-        self.diagram = Diagram(
+        self.diagram = DiagramView(
             master=main_frame,
             width=800,
             height=600,
             bg="black"
         )
+
+        self.diagram.create_grid(100)
 
         self.coords_label = tk.Label(main_frame, text="(0, 0)")
 
