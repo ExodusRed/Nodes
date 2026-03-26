@@ -2,6 +2,7 @@ import tkinter as tk
 
 # from view.diagram import Diagram
 from view.component.diagram_view import DiagramView
+from view.component.toolbar_view import ToolbarView
 
 class MainView(tk.Frame):
     def __init__(self, master, controller):
@@ -24,11 +25,13 @@ class MainView(tk.Frame):
         
 
         main_frame = tk.Frame(self.root, bg="black", border=0)
-        toolbar = tk.Frame(main_frame, bg="grey12")
+        # toolbar = tk.Frame(main_frame, bg="grey12")
+
+        toolbar_view = ToolbarView(self)
         
         # Toolbar buttons
         add_node_button = tk.Button(
-            toolbar,
+            toolbar_view,
             text="Add Node",
             command=lambda mode="add_node": self.controller.set_mode(mode)
         )
@@ -54,19 +57,21 @@ class MainView(tk.Frame):
 
         # Packing on screen
 
-        main_frame.pack(fill="both") # , anchor="center"
-        toolbar.pack(fill="x")
-        add_node_button.pack(pady=10)
+        # main_frame.pack(fill="both") # , anchor="center"
+        # toolbar.pack(fill="x")
+        # toolbar_view.pack(fill="both", expand=True)
+        # add_node_button.pack(pady=10)
         # self.canvas.pack(fill="both")
 
-        self.diagram.pack(fill="both")
-        self.coords_label.pack(fill="both")
-
-
-
-
+        # self.diagram.pack(fill="both")
+        # self.coords_label.pack(fill="both")
 
         # start
+        
+        main_frame.grid(column=0, row=0)
+        toolbar_view.grid()
+        add_node_button.grid()
+        self.diagram.grid()
 
     def set_mode(self, mode):
         self.controller.set_mode(mode)

@@ -30,7 +30,8 @@ class ViewManager:
         controller = MainController(self, model)
         view = MainView(self.root, controller)
 
-        view.pack(fill="both")
+        # view.pack(fill="both")
+        view.grid()
 
 
     def initialize_settings(self):
