@@ -6,3 +6,5 @@ class ToolbarView(tk.Frame):
         super().__init__(**kwargs)
 
         # if master in kwargs
+
+        # algo selector

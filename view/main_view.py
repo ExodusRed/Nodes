@@ -60,7 +60,6 @@ class MainView(tk.Frame):
         # self.canvas.pack(fill="both")
 
         self.diagram.pack(fill="both")
-
         self.coords_label.pack(fill="both")
 
 

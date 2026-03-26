@@ -4,11 +4,16 @@ class DiagramView(tk.Canvas):
     def __init__(self, unit=100, **kwargs):
         super().__init__(**kwargs)
         # self.create_grid(unit)
-        self.after(50, lambda unit=unit: self.create_grid(unit))
-
-    def create_starting_tile(self, column, row, unit=100):
-        starting_tile = self.create_rectangle(
-            column,
+        self.after(100, lambda unit=unit: self.create_grid(unit))
+    
+    def set_starting_tile(self, column, row):
+        if self.starting_tile != None: self.delete(self.starting_tile)
+        self.starting_tile = self.create_rectangle(
+            column * self.unit,
+            row * self.unit,
+            column * self.unit + self.unit,
+            row * self.unit + self.unit,
+            fill="red"
         )
 
 
@@ -16,7 +21,6 @@ class DiagramView(tk.Canvas):
         print("Creating grid...")
         self.update_idletasks()
         self.update()
-
 
         width, height = self.winfo_width(), self.winfo_height()
         # print(f"width: {width}, height: {height}")

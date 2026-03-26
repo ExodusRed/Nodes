@@ -1,35 +1,37 @@
 import tkinter as tk
 
+from utils.center_window import center_window
+
 from controller.view_manger import ViewManager
 
 
 class Nodes(tk.Tk):
     def __init__(self):
         super().__init__()
-        # self.withdraw()
+        self.withdraw()
         self.geometry("800x600")
         # self.center_window()
 
-        # self.deiconify()
-
-        self.update()
+        self.deiconify()
+        # self.update()
 
         self.bind("<Escape>", lambda e: self.quit())
 
         self.view_manager = ViewManager(self)
 
         # self.center_window()
+        center_window(self)
         
         # self.deiconify()
 
-    def center_window(self):
-        self.update_idletasks()
-        sw, sh = self.winfo_screenwidth(), self.winfo_screenheight()
-        ww, wh = self.winfo_width(), self.winfo_height()
+    # def center_window(self):
+    #     self.update_idletasks()
+    #     sw, sh = self.winfo_screenwidth(), self.winfo_screenheight()
+    #     ww, wh = self.winfo_width(), self.winfo_height()
 
-        nw, nh = (sw // 2) - (ww // 2), (sh // 2) - (wh // 2)
+    #     nw, nh = (sw // 2) - (ww // 2), (sh // 2) - (wh // 2)
 
-        self.geometry(f"+{nw}+{nh - 30}") # -30 accomandation for taskbar
+    #     self.geometry(f"+{nw}+{nh - 30}") # -30 accomandation for taskbar
 
 
 
